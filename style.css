@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0d1f394;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.todo-container {
+    background-color: rgb(53, 26, 66);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    margin-left: -60px;
+    color: #f9f9f9;
+}
+/* Strike-through effect for completed tasks */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+/* Complete button */
+.complete-btn {
+    color: green;
+    border: none;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+#addTaskBtn {
+    width: 20%;
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #c9a0ef;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#addTaskBtn:hover {
+    background-color: #da79ed;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li .task-text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+.edit-btn, .delete-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+#submitTaskBtn {
+    width: 20%;
+    padding: 10px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#submitTaskBtn:hover {
+    background-color: #0056b3;
+}
+#taskList {width: 93%;
+margin-left: 20px;
+margin-right: -20px;}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    #taskInput, #addTaskBtn, #submitTaskBtn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+.delete-btn {
+    color: rgb(145, 6, 210);
+}
+
+.edit-btn {
+    color:#da79ed ;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .input-container {
+        flex-direction: column;
+    }
+#list {margin-left: 40px;}
+    #taskInput {
+        width: 100%;
+        margin: 5px 0;
+    }
+    #addTaskBtn {width: 30%;
+    margin :5px 0}
+}
