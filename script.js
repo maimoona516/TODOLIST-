@@ -15,12 +15,18 @@ addTaskBtn.addEventListener('click', () => {
         editBtn.textContent = 'Edit';
         editBtn.classList.add('edit-btn');
 
+        const saveBtn = document.createElement('button');
+        saveBtn.textContent = 'Save';
+        saveBtn.classList.add('save-btn');
+        saveBtn.style.display = 'none'; // Initially hidden
+
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = 'Delete';
         deleteBtn.classList.add('delete-btn');
 
         li.appendChild(taskSpan);
         li.appendChild(editBtn);
+        li.appendChild(saveBtn); // Add save button
         li.appendChild(deleteBtn);
         taskList.appendChild(li);
 
@@ -29,10 +35,28 @@ addTaskBtn.addEventListener('click', () => {
 
         // Edit Task
         editBtn.addEventListener('click', () => {
-            const newTaskText = prompt('Edit your task', taskSpan.textContent);
-            if (newTaskText) {
-                taskSpan.textContent = newTaskText;
-            }
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.value = taskSpan.textContent;
+            input.classList.add('task-input');
+            taskSpan.replaceWith(input); // Replace task text with input field
+            input.focus();
+
+            editBtn.style.display = 'none';  // Hide Edit button during edit
+            deleteBtn.style.display = 'none';  // Hide Delete button during edit
+            saveBtn.style.display = 'inline-block';  // Show Save button during edit
+
+            // Save Task
+            saveBtn.addEventListener('click', () => {
+                if (input.value.trim()) {
+                    taskSpan.textContent = input.value; // Update task text
+                }
+
+                input.replaceWith(taskSpan);  // Replace input with updated task text
+                saveBtn.style.display = 'none';  // Hide Save button after saving
+                editBtn.style.display = 'inline-block';  // Show Edit button again
+                deleteBtn.style.display = 'inline-block';  // Show Delete button again
+            });
         });
 
         // Delete Task

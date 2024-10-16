@@ -144,4 +144,52 @@ margin-right: -20px;}
     }
     #addTaskBtn {width: 30%;
     margin :5px 0}
+} 
+.save-btn {color: hsl(292, 81%, 65%);
+border: none;
+ font-size: 16px;}
+  /* Style for the task container to handle text overflow */
+.taskBox {
+    width: 100%; /* Adjust as needed */
+    max-width: 100%; /* Prevents the container from expanding beyond its parent */
+    word-wrap: break-word; /* Breaks long words */
+    overflow: hidden;
+    padding: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Style for the input container during edit */
+.task-input {
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding is included within the width */
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+    overflow: hidden;
+    word-wrap: break-word; /* Ensure long words break */
+}
+
+/* Add some padding and prevent overflow for the task text */
+.task-text {
+    display: block;
+    max-width: 100%;
+    word-wrap: break-word; /* Ensures text doesn't overflow */
+    overflow: hidden;
+    white-space: normal; /* Allows text to wrap to the next line */
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+/* Hide the save button initially */
+.save-btn {
+    display: none;
+}
+
+/* For long task lists, limit height and enable scrolling */
+#taskList {
+    max-height: 400px; /* Adjust to your layout */
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
 }
