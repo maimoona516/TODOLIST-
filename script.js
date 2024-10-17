@@ -1,11 +1,19 @@
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
+const taskHeading = document.getElementById('taskHeading');
 
 // Add Task
 addTaskBtn.addEventListener('click', () => {
+    taskHeading.style.display = 'block';// Show the heading when the first task is added
+    
     const taskText = taskInput.value.trim();
-    if (taskText) {
+    if (!taskText) {
+        alert('Please fill in the task first!'); // Show alert if input is empty
+        return; // Stop further execution
+    }
+
+    if (taskText) { 
         const li = document.createElement('li');
         const taskSpan = document.createElement('span');
         taskSpan.classList.add('task-text');
@@ -62,6 +70,8 @@ addTaskBtn.addEventListener('click', () => {
         // Delete Task
         deleteBtn.addEventListener('click', () => {
             taskList.removeChild(li);
-        });
+            if (taskList.children.length === 0) {
+                taskHeading.style.display = 'none'; // Hide heading if no tasks remain
+    }});
     }
 });

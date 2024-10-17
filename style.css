@@ -23,7 +23,7 @@ body {
     text-align: center;
     
 }
-
+.task-input {outline: none;}
 h1 {
     margin-bottom: 20px;
     font-size: 24px;
